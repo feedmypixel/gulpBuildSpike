@@ -83,7 +83,11 @@ gulp.task('styles', function() {
  * rev files (mainly in the main html file)
  */
 gulp.task('rev', ['copyHtml', 'styles', 'imagemin'], function(){
-    var stream = gulp.src('./tmp/**/*', {base: './tmp/public/assets'})
+    var stream = gulp.src([
+        './tmp/public/assets/css/*.css',
+        './tmp/public/assets/js/*.js',
+        './tmp/public/assets/image/*'
+    ], {base: './tmp/public/'})
         .pipe(gulp.dest('./dist/public/')) // copy original assets to build dir
         .pipe(clean({force: true}))
         .pipe(rev())
@@ -123,8 +127,8 @@ gulp.task('fingerprint', ['rev'], function () {
         .pipe(fingerprint(require('./tmp/rev-manifest')))
         .pipe(gulp.dest('./dist/public/'));
 
-    //gulp.start('revCss');
-    //gulp.start('tearDown');
+    gulp.start('revCss');
+    gulp.start('tearDown');
 
     return stream;
 });
