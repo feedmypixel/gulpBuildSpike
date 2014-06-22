@@ -1,0 +1,47 @@
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font: 400 100%/1.6em 'Open Sans', 'Helvetica Neue', HelveticaNeue, 'Helvetica-Neue', Helvetica, sans-serif;
+    background-color: #fff;
+    color: darkgrey;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-background-clip: padding-box;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+::selection {
+    background: #0076a5;
+}
+
+::-moz-selection {
+    background: #0076a5;
+}
+
+.css-image {
+    background: url("../image/blah-other.jpg") no-repeat;
+    height: 320px;
+    width: 318px;
+    display: block;
+    border: 1px solid;
+}
